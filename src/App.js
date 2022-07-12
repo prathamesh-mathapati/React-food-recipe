@@ -10,27 +10,22 @@ function App() {
 
   const APP_ID = "154874fb";
   const APP_KEY = "4a3334396a463801066185075025e137";
-
-  useEffect(() => {
-    getRecipes();
-  }, []);
-
-  
-     const onInputChange = e => {
+  const onInputChange = e => {
       setSerach(e.target.value);
       console.log('edfgh');
     };
-    console.log(search);
-  const getRecipes = async () => {
+  const getrecipes = async () => {
     const res = await Axios.get(
       `https://api.edamam.com/search?q=${search}&app_id=${APP_ID}&app_key=${APP_KEY}`
     );
     setRecipes(res.data.hits);
-    console.log(res.data.hits);
   };
+  useEffect(() => {
+    getrecipes();
+    });
 
   const onSearchClick = () => {
-    getRecipes();
+    getrecipes();
   };
   return (
     <div className="App">
