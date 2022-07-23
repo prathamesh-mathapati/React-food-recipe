@@ -5,7 +5,7 @@ import Recipes from "./components/Recipe";
 import Axios from "axios";
 
 function App() {
-  const [search, setSerach] = useState("");
+  const [search, setSerach] = useState("egg");
   const [recipes, setRecipes] = useState([]);
 
   const APP_ID = "154874fb";
